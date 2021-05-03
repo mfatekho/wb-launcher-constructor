@@ -1,0 +1,105 @@
+//colors
+$selected-blue: #003C71;
+$option-default: #E5F0FB;
+$white: #FFFFFF;
+$option-disabled: #e3e3e3;
+$option-disabled-font: #757575;
+$black: black;
+
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.constructor-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 700px;
+  margin: 20px;
+}
+
+.subheader {
+  color: $selected-blue;
+  font-weight: 700;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.options-section {
+  width: 100%;
+  justify-self: stretch;
+
+  .general-options-section:not(:first-child) {
+    margin-top: 5px;
+  }
+}
+
+.general-options-section {
+  align-items: stretch;
+  display: flex;
+  flex-direction: row;
+  height: 80px;
+}
+
+.option-label {
+  align-self: center;
+  flex: 1;
+  width: 250px;
+}
+
+.options-group {
+  flex: 2;
+  display: flex;
+
+  .selected {
+    background-color: $selected-blue;
+    color: $white;
+  }
+
+  .disabled {
+    background-color: $option-disabled;
+    color: $option-disabled-font;
+  }
+
+
+  ::ng-deep.mat-radio-outer-circle {
+    border-color: $black;
+  }
+
+  ::ng-deep.mat-checkbox-frame {
+    border-color: $black;
+  }
+
+}
+
+.option {
+  flex: 1;
+  background: $option-default;
+  height: 100%;
+  display: flex;
+  align-items: center;
+
+  ::ng-deep.mat-radio-label {
+    margin-left: 20px;
+  }
+
+  ::ng-deep.mat-checkbox-layout {
+    margin-left: 20px;
+  }
+
+  ::ng-deep.mat-form-field-wrapper {
+    margin: 0 16px 0 16px;
+  }
+
+  ::ng-deep.mat-input-element:disabled {
+    color: $option-disabled-font;
+  }
+}
+
+.option:not(:first-child) {
+  border-left: 1px solid $white;
+}
+
+
